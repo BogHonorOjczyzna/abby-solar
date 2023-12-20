@@ -14,12 +14,26 @@ h2 {
 
 #question-2,
 #question-3,
-#question-4 {
+#question-4,
+#question-5,
+#question-6,
+#no-qualify,
+#success {
   display: none;
 }
 
-#question-3 input {
+#question-3 input,
+#question-4 input,
+#question-5 input {
   line-height: 30px;
+  padding-left: 10px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#bill-select {
+  height: 40px;
   padding-left: 10px;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 5px;
@@ -34,7 +48,7 @@ h2 {
 }
 
 #header-left img {
-  max-height: 50px;
+  max-height: 40px;
 }
 
 button {
@@ -63,6 +77,7 @@ button h3 {
   min-height: 5rem;
   background-color: white;
   border-bottom: 3px solid #db713e;
+  padding: 0 150px 0 150px;
 }
 
 .main-container {
