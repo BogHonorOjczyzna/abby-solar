@@ -20,10 +20,20 @@ $(document).ready(function () {
     $("#question-4").hide()
     $("#question-5").css("display", "flex")
   })
+  $("#q4-b2").click(function () {
+    // $("#Create").toggle()....
+    $("#question-4").hide()
+    $("#question-5").css("display", "flex")
+  })
   $("#q5-b1").click(function () {
     // $("#Create").toggle()....
     $("#question-5").hide()
     $("#question-6").css("display", "flex")
+  })
+  $("#q6-b1").click(function () {
+    // $("#Create").toggle()....
+    $("#question-6").hide()
+    $("#success").css("display", "flex")
   })
 
   //ALL OF OUR NO-QUALIFY FUNCTIONS
