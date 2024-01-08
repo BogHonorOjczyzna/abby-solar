@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#q1-b1").click(function () {
     // $("#Create").toggle()
     $("#question-1").hide()
+    $("#main-cta").hide()
     $("#question-2").css("display", "flex")
   })
   $("#q2-b2").click(function () {
