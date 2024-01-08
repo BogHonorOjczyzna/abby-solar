@@ -40,6 +40,14 @@ h2 {
   margin-bottom: 10px;
 }
 
+.button-house input {
+  height: 40px;
+  padding-left: 10px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 #header-left,
 #header-right {
   display: flex;
@@ -101,7 +109,7 @@ button h3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 50px 50px;
+  padding: 50px 50px 20px 50px;
   min-height: 700px;
   width: 80%;
   align-self: center;
@@ -123,6 +131,10 @@ button h3 {
 
 .button-house button {
   margin-bottom: 10px;
+}
+
+.disclaimer {
+  color: rgb(86 86 86);
 }
 
 .footer {

@@ -33,6 +33,7 @@ $(document).ready(function () {
   $("#q6-b1").click(function () {
     // $("#Create").toggle()....
     $("#question-6").hide()
+    $("#main-cta").hide()
     $("#success").css("display", "flex")
   })
 
@@ -40,11 +41,13 @@ $(document).ready(function () {
   $("#q1-b2").click(function () {
     // $("#Create").toggle()
     $("#question-1").hide()
+    $("#main-cta").hide()
     $("#no-qualify").css("display", "flex")
   })
   $("#q2-b1").click(function () {
     // $("#Create").toggle()
     $("#question-2").hide()
+    $("#main-cta").hide()
     $("#no-qualify").css("display", "flex")
   })
 })
