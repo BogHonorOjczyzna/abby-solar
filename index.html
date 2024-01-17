@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="autocomplete.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
@@ -40,12 +42,15 @@
               <h2>What is Your Average Electric Bill?</h2>
               <div class="button-house">
                 <select name="monthly-payment" id="bill-select">
-                  <option value="unselected">Select Your Average Electric Bill</option>
+                  <option value="unselected" default>Select Your Average Electric Bill</option>
                   <option value="100-150">$100 - $150</option>
                   <option value="150-200">$150 - $200</option>
                   <option value="200-300">$200 - $300</option>
                   <option value="300+">$300+</option>
                 </select>
+                <div id="q-3-alert-1" style="display: none">
+                  <p style="color: red">Please select an option.</p>
+                </div>
                 <button id="q3-b1"><h3>Next Question</h3></button>
               </div>
             </div>
@@ -60,18 +65,25 @@
             <div class="main-question" id="question-5">
               <h1>Enter Your Zip Code</h1>
               <div class="button-house">
-                <input placeholder="Zip Code*" />
-                <input placeholder="Address (optional)" />
+                <input placeholder="Zip Code*" id="zip" maxlength="5" />
+                <!-- <input placeholder="Address (optional)" id="address" /> -->
+                <div class="autocomplete-container" id="autocomplete-container"></div>
+                <div id="q-5-alert-1" style="display: none">
+                  <p style="color: red">Please provide a 5-digit zip code. <br />Numbers only.</p>
+                </div>
                 <button id="q5-b1"><h3>Submit</h3></button>
               </div>
             </div>
             <div class="main-question" id="question-6">
               <p><strong>Congratulations! You have made it onto our promotion list.</strong></p>
               <div class="button-house">
-                <input placeholder="First Name" />
-                <input placeholder="Last Name" />
-                <input placeholder="Email Address" />
-                <input placeholder="Phone Number" />
+                <input placeholder="First Name" id="fname" />
+                <input placeholder="Last Name" id="lname" />
+                <input placeholder="Email Address" id="email" />
+                <input placeholder="Phone Number" id="phone" />
+                <div id="q-6-alert-1" style="display: none">
+                  <p style="color: red">Please complete all fields.<br />Email and phone must be valid.</p>
+                </div>
                 <button id="q6-b1"><h3>Submit</h3></button>
               </div>
             </div>
@@ -109,4 +121,5 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript" src="autocomplete.js"></script>
 </html>
