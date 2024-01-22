@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="autocomplete.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
@@ -25,7 +26,6 @@
           <div class="form-questions">
             <div class="main-question" id="question-1">
               <h1>Are you the homeowner?</h1>
-              <p>Please answer the questions to the best of your ability</p>
               <div class="button-house">
                 <button id="q1-b1"><h3>Yes, I Own My Home</h3></button>
                 <button id="q1-b2"><h3>No, I Rent</h3></button>
@@ -56,7 +56,7 @@
             </div>
             <div class="main-question" id="question-4">
               <h2>Would You Prefer an In-Person or Virtual Consultation</h2>
-              <p>Virtual consultations take place over the internet</p>
+              <p>Virtual consultations will be via Zoom.</p>
               <div class="button-house">
                 <button id="q4-b1"><h3>In Person Consultation</h3></button>
                 <button id="q4-b2"><h3>Virtual Consultation</h3></button>
@@ -86,6 +86,22 @@
                 </div>
                 <button id="q6-b1"><h3>Submit</h3></button>
               </div>
+            </div>
+            <div class="main-question" id="question-7">
+              <p>
+                <strong
+                  >Congratulations! You qualified.<br />
+                  Please select a time below that works best for you. We’ll reach out to you to confirm your appointment.
+                </strong>
+              </p>
+              <div id="calWidget" style="min-width: 500px; height: 630px; background-color: white; margin-bottom: 25px; margin-top: 10px"></div>
+              <!-- Calendly inline widget begin -->
+              <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/" style="min-width: 500px; height: 700px"></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+              <!-- Calendly inline widget end -->
+              <!-- <div class="button-house">
+                <button id="q7-b1"><h3>Submit</h3></button>
+              </div> -->
             </div>
             <!-- <div class="main-question" id="question-6">
               <h2>Please select an appointment date from the calendar below. We will reach out to you prior to the selected time in order to confirm your availability. You may also call (800)-GET-PWER to schedule now!</h2>

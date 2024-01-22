@@ -52,13 +52,26 @@ $(document).ready(function () {
     data.lname = $("#lname").val()
     data.email = $("#email").val()
     data.phone = $("#phone").val()
-    if (data.fname == "" || data.lname == "" || data.email == "" || data.phone == "" || data.phone.length != 14 || !(data.email.includes("@") && data.email.includes("."))) {
+    const validPhone = checkPhone("1" + data.phone.replace(/\D/g, "")).valid
+    if (!validPhone || data.fname == "" || data.lname == "" || data.email == "" || data.phone == "" || data.phone.length != 13 || !(data.email.includes("@") && data.email.includes("."))) {
       $("#q-6-alert-1").css("display", "block")
       return
     }
     // alert(JSON.stringify(data))
     doSubmitData(data)
+    Calendly.initInlineWidget({
+      url: "https://calendly.com/",
+      parentElement: document.getElementById("calWidget"),
+      prefill: {
+        name: data.fname + " " + data.lname,
+        email: data.email
+      },
+      utm: {}
+    })
     $("#question-6").hide()
+    $("#question-7").css("display", "flex")
+  })
+  $("#q7-b1").click(function () {
     $("#main-cta").hide()
     $("#success").css("display", "flex")
   })
@@ -81,7 +94,7 @@ $(document).ready(function () {
 function doSubmitData(dataThing) {
   $.ajax({
     type: "POST",
-    url: "http://ogre.adc4gis.com/",
+    url: "https://hooks.zapier.com/hooks/catch/10947484/3wk1v37/",
     data: { json: JSON.stringify(dataThing) },
     success: success
   })
@@ -90,9 +103,26 @@ function doSubmitData(dataThing) {
 //FIELD MASKING
 $(document).ready(function () {
   // Mask which specifies options
-  $("#phone").inputmask({ mask: "(999)-999-9999" })
+  $("#phone").inputmask({ mask: "(999)999-9999" })
 })
 
 //VERIFY PHONE NUMBER
+function checkPhone(thePhoneNumber) {
+  const url = "https://phonevalidation.abstractapi.com/v1/?api_key=3e03f69b9ae64dc885942c18314a3b07&phone=" + thePhoneNumber
+  var response = null
 
-//ADDRESS AUTOCOMPLETE
+  $.ajax({
+    url: url,
+    type: "GET",
+    dataType: "json",
+    async: false, // Making the request synchronous
+    success: function (data) {
+      response = data
+    },
+    error: function (xhr, status, error) {
+      console.error("Request failed: " + status + ", " + error)
+    }
+  })
+
+  return response
+}
