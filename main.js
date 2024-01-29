@@ -21,6 +21,24 @@ $(document).ready(function () {
       return
     }
     $("#question-3").hide()
+    $("#question-3b").css("display", "flex")
+  })
+  $("#q3b-b1").click(function () {
+    // $("#Create").toggle()....
+    data.hasEV = "Yes"
+    $("#question-3b").hide()
+    $("#question-4").css("display", "flex")
+  })
+  $("#q3b-b2").click(function () {
+    // $("#Create").toggle()....
+    data.hasEV = "No"
+    $("#question-3b").hide()
+    $("#question-4").css("display", "flex")
+  })
+  $("#q3b-b3").click(function () {
+    // $("#Create").toggle()....
+    data.hasEV = "Planning"
+    $("#question-3b").hide()
     $("#question-4").css("display", "flex")
   })
   $("#q4-b1").click(function () {
