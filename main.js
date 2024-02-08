@@ -78,7 +78,7 @@ $(document).ready(function () {
     // alert(JSON.stringify(data))
     doSubmitData(data)
     Calendly.initInlineWidget({
-      url: "https://calendly.com/",
+      url: "https://calendly.com/heliogold/solar-consultation",
       parentElement: document.getElementById("calWidget"),
       prefill: {
         name: data.fname + " " + data.lname,
